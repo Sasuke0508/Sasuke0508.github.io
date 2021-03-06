@@ -11,7 +11,7 @@ body {
 }
 
 /* Chỉnh lại nền và màu chữ khi bôi đen */
-::selection{
+::selection {
   background-color: #ec7532;
   color: white;
 }
@@ -109,6 +109,33 @@ header {
 }
 
 /* CAROUSEL */
+#movieCarousel {
+  height: 650px;
+}
+
+#movieCarousel .carousel-inner {
+  height: 100%;
+}
+
+#movieCarousel .carousel-item {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+#movieCarousel .carousel-item:first-child {
+  background-image: url(../img/hero-1.jpg);
+}
+
+#movieCarousel .carousel-item:nth-child(2) {
+  background-image: url(../img/hero-2.jpg);
+}
+
+/* Không nên dùng :last-child vì chưa biết sau này có thêm hình nào ko */
+#movieCarousel .carousel-item:nth-child(3) {
+  background-image: url(../img/hero-3.jpg);
+}
+
 /* Chỉnh vị trí caption sử dụng top, left, transform vs position: absolute */
 #movieCarousel .carousel-item .carousel-caption {
   text-align: left;
@@ -210,8 +237,8 @@ header {
   transform: translateX(-50%);
   margin-right: 0;
   margin-left: 0;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #movieCarousel .carousel-indicators li {
@@ -411,7 +438,7 @@ header {
   background-color: #d8d8d8;
 }
 
-.showTimes__runingTimes .col-3 span:last-of-type {
+.showTimes__runingTimes .showTimes__mins span:last-of-type {
   width: 33px;
   height: 33px;
   display: inline-block;
@@ -492,12 +519,12 @@ header {
 
 /* MOVIELIST */
 
-.movieList{
+.movieList {
   background-color: #101010;
 }
 
 /* Tạo màng đen khi hover vào ảnh phim */
-.movieList__item{
+.movieList__item {
   position: relative;
   border-radius: 10px;
   /* Thực chất là thẻ con ko hề bo tròn (bị border-radius ảnh hưởng)
@@ -505,7 +532,7 @@ header {
   overflow: hidden;
 }
 
-.movieList__overlay{
+.movieList__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -516,45 +543,45 @@ header {
   transition: 0.5s;
 }
 
-.movieList__item:hover .movieList__overlay{
+.movieList__item:hover .movieList__overlay {
   opacity: 0;
 }
 
 /* CONTACT */
-.contact__content{
+.contact__content {
   text-align: center;
 }
 
-.contact__content p:first-child{
+.contact__content p:first-child {
   font-size: 23px;
   color: #4a4a4a;
   letter-spacing: 1px;
   font-weight: 300;
 }
 
-.contact__content a{
+.contact__content a {
   font-size: 46px;
   color: #fbbd61;
   text-decoration: none;
 }
 
 /* FOOTER */
-footer{
+footer {
   background-color: #101010;
 }
 
-footer h3{
+footer h3 {
   color: #ec7532;
   font-size: 16px;
   letter-spacing: 2px;
   margin-bottom: 15px;
 }
 
-footer li{
+footer li {
   list-style: none;
 }
 
-footer a{
+footer a {
   font-size: 13px;
   color: white;
   text-decoration: none;
@@ -563,17 +590,77 @@ footer a{
   transition: 0.5s;
 }
 
-footer a:hover{
+footer a:hover {
   color: #fbbd61;
   text-decoration: none;
 }
 
-.footer__copyright{
+.footer__copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
   padding: 15px 0;
 }
 
-.footer__copyright p{
+.footer__copyright p {
   margin-bottom: 0;
+  text-align: center;
 }
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 991.98px) {
+  /* HEADER */
+  header .navbar-brand {
+    max-width: 180px;
+  }
+
+  #navbarCyberMovie .navbar-nav .nav-link {
+    font-size: 14px;
+    padding: 20px 12px;
+    letter-spacing: 2px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  /* HEADER */
+  header .navbar-toggler-icon {
+    color: #fbbd61;
+  }
+
+  header .navbar-toggler-icon:focus {
+    outline: none;
+  }
+
+  #navbarCyberMovie .navbar-nav {
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+  }
+
+  #navbarCyberMovie .navbar-nav .active .nav-link {
+    color: #ec7532;
+  }
+
+  #navbarCyberMovie .navbar-nav .line.active::after {
+    width: 0;
+  }
+
+  /* CAROUSEL */
+  #movieCarousel .carousel-item .carousel-caption h2{
+    font-size: 2.5rem;
+  }
+
+  /* SHOWTIMES */
+  .showTimes .nav-tabs .nav-link{
+    font-size: 16px;
+  }
+
+  .showTimes .nav-tabs .nav-link span{
+    padding: 10px 20px;
+  }
+
+  .showTimes .nav-tabs .nav-item .nav-link.active::after{
+    width: 0;
+  }
+}
+
+  
